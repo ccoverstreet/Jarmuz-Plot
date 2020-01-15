@@ -13,7 +13,6 @@ class autoplotter():
     def __init__(self, arguments):
         # Init function decides what plotting methods to call 
         self.arguments = arguments
-        print(self.arguments)
 
         for i in range(0, len(self.arguments)):
             if self.arguments[i] == "-v" or self.arguments[i] == "--verbose":
@@ -39,9 +38,9 @@ class autoplotter():
 
         # Using file extension to use correct plot method 
         try:
-            plot_methods["xy"](filename)
+            plot_methods[file_extension](filename)
         except Exception as err:
-            print(err)
+            print("No method for file type \"{}\"".format(err))
 
 
     def plot_xy(self, filename):
@@ -62,7 +61,7 @@ class autoplotter():
                 x.append(float(templine[0]))
                 y.append(float(templine[1]))
         except:
-            print("Unable to read data from file \"{}\". Possible format error.".format(filepath))
+            print("Unable to read data from file \"{}\". Possible format error.".format(filename))
             return
 
         print("Plotting \"{}\" file.".format(filename))

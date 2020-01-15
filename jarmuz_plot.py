@@ -11,8 +11,6 @@ import autoplot.autoplot as autoplot
 def parse_passed_arguments(arguments):
     # Parsing function for commandline arguments. Determines whether GUI will be launched or if quickplot was used
 
-    print(arguments)
-
     for i in range(1, len(arguments)):
         if arguments[i] == "-h" or arguments[i] == "--help":
             print("Jarmuz Plot")
