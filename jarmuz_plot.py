@@ -14,7 +14,7 @@ def parse_passed_arguments(arguments):
     for i in range(1, len(arguments)):
         if arguments[i] == "-h" or arguments[i] == "--help":
             print("Jarmuz Plot")
-        elif arguments[i] == "-ap" or arguments[i] == "--autoplot":
+        elif arguments[i] == "" or arguments[i] == "autoplot":
             print("Autoplotting passed files")
             autoplot.autoplotter(arguments[i + 1: len(arguments)])
             
